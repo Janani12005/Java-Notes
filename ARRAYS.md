@@ -1,4 +1,5 @@
 ## Find max and min
+
 ````java[]
 
 public class Main
@@ -152,14 +153,78 @@ public class Main {
                 }
             }
         }
+}
+}
+
+     {OR}
+
+for (int i =0; i<(a.length)-1; i++) {
+                if (a[i]==a[i+1]) {
+                   System.out.print(a[i]+ " ");
+                    
+                }
+````
+
+## Sorting an element
+
+````java[]
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={11,23,11,14,23,14,2,5};
+        Arrays.sort(a);
+        System.out.print("After removing duplicate number :");
+      
         
-        
-        
-        
-        
+    
+        for (int i = 0; i <(a.length);i++) {
+            if (i==0 || a[i]!=a[i-1]){
+                System.out.print(a[i] + " ");
+            }
+           
+        }
+        System.out.println();
+}
+````
+
+## Second largest element in the given array
+
+````java[]
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1}; 
+        System.out.println("Second largest element is: " + findSecondLargest(arr));
+    }
+
+    public static int findSecondLargest(int[] arr) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                 secondLargest = num;
+            }
+        }
+
+        return secondLargest ;
     }
 }
 ````
+## Merge two numbers
+
+````java[]
+
+
+
+
+
+
         
        
 
