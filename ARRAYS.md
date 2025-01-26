@@ -220,6 +220,34 @@ public class Main {
 
 ````java[]
 
+import java.util.Scanner;
+
+public class MergeTwoNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        
+        String mergedNumber = String.valueOf(num1) + String.valueOf(num2);
+
+        
+        int mergedResult = Integer.parseInt(mergedNumber);
+
+        System.out.println("Merged Number: " + mergedResult);
+       }
+}
+
+~~~~
+
+
+
+
 
 
 
