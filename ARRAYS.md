@@ -30,7 +30,7 @@ public class Main
 
 ## Check the element is present or not in the given array and print Yes or Not
 
-```` jaava[]
+```` java[]
 
 import java.util.Scanner;
 
