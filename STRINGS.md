@@ -23,7 +23,15 @@ public class Main {
         }
     }
 }
-                   OR
+
+~~~~
+
+##   IN AN TEXT EDITOR APPLICATION FIND AND REPLACE THE  WORDS IN THE TEXT
+
+~~~~ java[]
+
+
+
 
 
 
