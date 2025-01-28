@@ -30,6 +30,20 @@ public class Main {
 
 ~~~~ java[]
 
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1 = " text editor";
+	    
+		System.out.println(str1.replace("t","T") );
+	}
+}
+~~~~
+
+
+
 
 
 
