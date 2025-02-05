@@ -1,4 +1,6 @@
 ## STRONG NUMBER
+
+
 ````java[]
 
 import java.util.*;
@@ -33,7 +35,10 @@ public class Main
 	}	  
 ````
 
+
 ## AUTOMORPHIC NUMBER
+
+
 ````java[]
 
 import java.util.*;
@@ -62,8 +67,13 @@ public class Main
 	  }
 	}
 ````
-## ADAM NUMBERr
+
+
+## ADAM NUMBER
+
+
 ````java[]
+
 import java.util.*;
 public class Main
 {
@@ -99,8 +109,13 @@ public class Main
 }
 }
 ````
+
+
 ## HARSHAD NUMBER
+
+
 ```` java[]
+
 import java.util.Scanner;
 
 public class HarshadNumber {
@@ -129,4 +144,32 @@ public class HarshadNumber {
     }
 }
 ````
+
+## ARMSTRONG NUMBER
+
+````java[]
+
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        int temp = num;
+        int sum = 0;
+        int numberOfDigits = String.valueOf(num).length();
+        while (num!= 0 ){
+            int digit = num%10;
+            sum+=Math.pow(digit,numberOfDigits);
+            num/=10;
+            
+        }
+        System.out.println(sum==temp ? "Armstrong number": "not an armstrong number");
+    }
+        
+        
+}
+
+````
+
+
 
