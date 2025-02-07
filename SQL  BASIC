@@ -1,0 +1,69 @@
+create database professional;
+ use professional;
+CREATE TABLE Employee (
+    S_no INT (20),
+    Employee_ID VARCHAR(10),
+    Employee_Name VARCHAR(50),
+    Date_of_Birth DATE,
+    Date_of_Joining DATE,
+    Salary DECIMAL(10, 2),
+    Bonus DECIMAL(10, 2),
+    City VARCHAR(50),
+    Address VARCHAR(100),
+    Department VARCHAR(50),
+    Employee_Email VARCHAR(50),
+    Employee_Status VARCHAR(20),
+    TimeStamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert 10 Records
+INSERT INTO Employee VALUES
+(1, 'EMP001', 'Michael', '1985-06-15', '2010-03-12', 80000, 5000, 'Chennai', '123 Street A', 'HR', 'michael@example.com', 'Active', CURRENT_TIMESTAMP),
+(2, 'EMP002', 'Sarah', '1990-08-22', '2012-07-19', 75000, 4500, 'Delhi', '456 Street B', 'Finance', 'sarah@example.com', 'Active', CURRENT_TIMESTAMP),
+(3, 'EMP003', 'John', '1988-12-01', '2014-11-05', 90000, 6000, 'Mumbai', '789 Street C', 'IT', 'john@example.com', 'Active', CURRENT_TIMESTAMP),
+(4, 'EMP004', 'Megan', '1992-05-30', '2015-06-15', 72000, 4000, 'Chennai', '321 Street D', 'Admin', 'megan@example.com', 'Inactive', CURRENT_TIMESTAMP),
+(5, 'EMP005', 'David', '1983-03-17', '2009-01-25', 85000, 5500, 'Hyderabad', '654 Street E', 'IT', 'david@example.com', 'Active', CURRENT_TIMESTAMP),
+(6, 'EMP006', 'Monica', '1989-09-10', '2013-04-20', 70000, 3500, 'Pune', '987 Street F', 'HR', 'monica@example.com', 'Inactive', CURRENT_TIMESTAMP),
+(7, 'EMP007', 'Chris', '1991-01-05', '2016-09-13', 95000, 6200, 'Chennai', '213 Street G', 'Finance', 'chris@example.com', 'Active', CURRENT_TIMESTAMP),
+(8, 'EMP008', 'Martha', '1987-11-22', '2011-02-08', 68000, 3000, 'Bangalore', '546 Street H', 'Admin', 'martha@example.com', 'Active', CURRENT_TIMESTAMP),
+(9, 'EMP009', 'Raj', '1993-04-14', '2017-12-19', 78000, 4200, 'Chennai', '879 Street I', 'IT', 'raj@example.com', 'Active', CURRENT_TIMESTAMP),
+(10, 'EMP010', 'Priya', '1995-07-09', '2018-03-25', 67000, 2800, 'Delhi', '132 Street J', 'HR', 'priya@example.com', 'Inactive', CURRENT_TIMESTAMP);
+
+--  Change the Column Name (rename Address to Residential_Address)
+ALTER TABLE Employee RENAME COLUMN Address  Residential_Address;
+
+--  Add New Column (Phone Number)
+ALTER TABLE Employee ADD Phone_Number VARCHAR(15);
+
+--  Alter Table with Some Records (Update Phone Numbers)
+UPDATE Employee SET Phone_Number = '9876543210' WHERE Employee_ID = 'EMP001';
+UPDATE Employee SET Phone_Number = '8765432109' WHERE Employee_ID = 'EMP002';
+
+--  Drop a Column (Bonus)
+ALTER TABLE Employee DROP COLUMN Bonus;
+
+--  Delete Some Data (Employees from Delhi)
+DELETE FROM Employee WHERE City = 'Delhi';
+
+--  View All Employees Starting with 'M'
+SELECT * FROM Employee WHERE Employee_Name LIKE 'M%';
+
+--  View Employees with Salary More Than 70000
+SELECT * FROM Employee WHERE Salary > 70000;
+
+--  View Employees from Chennai
+SELECT * FROM Employee WHERE City = 'Chennai';
+
+--  Use Logical Operators (Salary > 70000 AND City = 'Chennai')
+SELECT * FROM Employee WHERE Salary > 70000 AND City = 'Chennai';
+
+--  Use Aggregate Functions
+SELECT MIN(Salary) AS Min_Salary, MAX(Salary) AS Max_Salary, COUNT(*) AS Total_Employees, SUM(Salary) AS Total_Salary, AVG(Salary) AS Average_Salary FROM Employee;
+
+--  Use WHERE, LIKE, BETWEEN
+SELECT * FROM Employee WHERE Salary BETWEEN 70000 AND 90000;
+SELECT * FROM Employee WHERE Employee_Name LIKE '%a%';
+SELECT * FROM Employee WHERE City = 'Chennai' AND Salary > 75000;
+
+--  Use TRUNCATE (Clear the Table without Dropping It)
+TRUNCATE TABLE Employee;
