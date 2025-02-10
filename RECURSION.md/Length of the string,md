@@ -1,0 +1,21 @@
+````java[]
+
+import java.util.Scanner;
+
+public class StringLength {
+    public static void main(String[] args) {
+        // Create a scanner object to take input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Ask the user for a string input
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        
+        // Find the length of the string
+        int length = inputString.length();
+        
+        // Print the length of the string
+        System.out.println("Length of the string: " + length);
+    }
+}
+````
