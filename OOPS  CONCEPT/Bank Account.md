@@ -10,6 +10,9 @@ import java.util.*;
  abstract class BankAccount {
 	String AccountHolderName;
 	double balance;
+	
+	// Constructor
+	
 	BankAccount(String AccountHolderName,double balance) {
 		this.AccountHolderName = AccountHolderName;
 		this.balance = balance;
@@ -53,6 +56,9 @@ import java.util.*;
 		}
 	}
 }
+
+//Inheritance
+
 class SavingsAccount extends BankAccount{
 	public SavingsAccount(String AccountHolderName,double balance) {
 	super(AccountHolderName,balance);
@@ -80,4 +86,5 @@ public class Main {
 
 	}
 }
+
 ````
